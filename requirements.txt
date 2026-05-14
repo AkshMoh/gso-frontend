@@ -1,0 +1,9 @@
+gradio
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+psutil
+notebook
+ipykernel

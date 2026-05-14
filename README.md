@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Feature Selection in Software Fault Prediction using Glider Snake Optimization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+This project presents a comparative analysis of the **Glider Snake Optimization (GSO)** algorithm for feature selection in **Software Fault Prediction (SFP)**. SFP uses historical data and code metrics (such as McCabe and Halstead metrics) to identify fault-prone modules early in the development lifecycle.
 
-## Available Scripts
+The primary objective is to address the "curse of dimensionality" by selecting optimal subsets of features to improve machine learning classifier accuracy while significantly reducing computational overhead.
 
-In the project directory, you can run:
+## Key Features
+* **Novel Metaheuristic:** Implements Glider Snake Optimization (GSO), inspired by the multi-segment serpentine motion of arboreal snakes.
+* **Superior Efficiency:** GSO is approximately **30 to 60 times faster** than traditional algorithms like GA and ACO, completing tasks in 10–40 seconds.
+* **High Performance:** Achieves up to **90% error reduction** and maintains predictive accuracy with a significantly lower memory footprint.
+* **Benchmarking:** Comparative evaluation against Genetic Algorithm (GA), Particle Swarm Optimization (PSO), Differential Evolution (DE), Ant Colony Optimization (ACO), and Secant Optimization Algorithm (SOA).
+* **Comprehensive Testing:** Validated using 12 standardized **NASA MDP datasets** (e.g., CM1, JM1, KC1, PC3).
 
-### `npm start`
+## System Requirements
+### Hardware
+* **Processor:** CPU-based system (Single or Multi-core).
+* **Memory:** Minimum 8 GB RAM recommended.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Software Stack
+* **Language:** Python 3.9.12.
+* **Core Libraries:** NumPy, Pandas, Scikit-learn, Matplotlib, Psutil.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Implementation Workflow
+1.  **Dataset Acquisition:** Retrieval of 12 NASA MDP datasets from the PROMISE repository.
+2.  **Preprocessing:** Data cleaning, handling missing values, label conversion, and feature scaling using `StandardScaler'.
+3.  **Wrapper-Based Selection:** Integration of classifiers (KNN, Naive Bayes, QDA, Random Forest) directly into the fitness function of metaheuristics.
+4.  **Performance Evaluation:** Benchmarking using accuracy, precision, recall, and F1-score.
 
-### `npm test`
+## Results Summary
+* **Temporal Efficiency:** GSO consistently navigates search spaces in 10–40 seconds compared to 400–650 seconds for legacy algorithms.
+* **Dimensionality Reduction:** Successfully achieves a reduction rate of **>40%** across diverse projects while maintaining or improving predictive accuracy.
+* **Accuracy Peak:** Reached peak accuracies such as **97.77% on the PC2 dataset** using KNN/QDA.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# 📦 FSGSO-SFP-Research
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ┣ 📂 datasets   (Standardised)
+ 
+ ┃ ┣ 📄 CM1.csv
+ 
+ ┃ ┣ 📄 JM1.csv
+ 
+ ┃ ┣ 📄 KC1.csv
+ 
+ ┃ ┗ 📄 ... (all 12 datasets)
+ 
+ ┃ 📜 GSO_ALL.ipynb
+ 
+ ┃ 📜 ACO_all.ipynb
+ 
+ ┃ 📜 GA_all.ipynb
+ 
+ ┃ 📜 PSO_all.ipynb
+ 
+ ┃ 📜 DE_all.ipynb
+ 
+ ┃ 📜 SOA_all.ipynb
+ 
+ ┣ 📜 requirements.txt 
+ 
+ ┗ 📜 README.md             
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Installation Guide
+To ensure all dependencies are installed correctly for the .ipynb files, run the following command in your terminal or command prompt:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+pip install -r requirements.txt
 
-### `npm run eject`
+# Execution Guide 
+1. Navigate to your Project Directory : cd path\to\your\FSGSO_Project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Set Up a Virtual Environment (Recommended)
+    :: Create the environment
+    python -m venv venv
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    :: Activate the environment
+    venv\Scripts\activate
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Install Dependencies : pip install -r requirements.txt
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Launch the Jupyter Server
+    Once the installation is complete, start the notebook server directly from the CMD:
+    jupyter notebook
 
-## Learn More
+5. Running the Research Pipeline
+    Select a Notebook: In the browser,open the .ipynb file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Kernel Check: Ensure the top right corner says "Python 3".
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Execute: You can run cells one by one using Shift + Enter or go to the top menu and select Cell > Run All.
 
-### Code Splitting
+## Authors
+* Akshat Mohit
+* Anushka Singh 
+* Samriddhi 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Project Guide:** Dr. Suchismita Das, School of Computer Engineering, KIIT University.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Acknowledgments
+Special thanks to the PROMISE Repository and the NASA Metrics Data Program (MDP) for the datasets used in this validation study.
+## Model Files
